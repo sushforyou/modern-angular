@@ -1,18 +1,11 @@
-import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DatabindingComponent } from './dashboard/databinding.component';
-import { SignalsComponent } from './dashboard/signals.component';
-import { FormsComponent } from './dashboard/forms.component';
+import { Routes } from '@angular/router'
+import { Databinding } from './components/databinding/databinding';
+import { Forms } from './components/forms/forms';
+import { Signals } from './components/signals/signals';
 
 export const routes: Routes = [
-	{
-		path: 'dashboard',
-		component: DashboardComponent,
-		children: [
-			{ path: '', redirectTo: 'databinding', pathMatch: 'full' },
-			{ path: 'databinding', component: DatabindingComponent },
-			{ path: 'signals', component: SignalsComponent },
-			{ path: 'forms', component: FormsComponent },
-		],
-	},
+  { path: '', redirectTo: 'databinding', pathMatch: 'full' },
+  { path: 'databinding', component: Databinding },
+  { path: 'signals', component: Signals },
+  { path: 'forms', component: Forms },
 ];

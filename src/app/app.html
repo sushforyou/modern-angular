@@ -1,1 +1,19 @@
-  <router-outlet></router-outlet>
+<section class="dashboard">
+  <nav class="sidebar" aria-label="Angular learning menu">
+    <h3>Angular Learning</h3>
+    <ul>
+      <li><a routerLink="./databinding" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Data Binding</a></li>
+      <li><a routerLink="./signals" routerLinkActive="active">Signals</a></li>
+      <li><a routerLink="./forms" routerLinkActive="active">Forms</a></li>
+    </ul>
+    <footer class="nav-footer">v21 Learning Dashboard</footer>
+  </nav>
+
+  <main class="workspace">
+    <header class="workspace-header">
+      <h2>Angular Learning Dashboard</h2>
+    </header>
+
+    <router-outlet></router-outlet>
+  </main>
+</section>

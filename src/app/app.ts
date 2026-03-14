@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
+const importedModules = [CommonModule, RouterLink, RouterLinkActive, RouterOutlet];
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet, DashboardComponent],
+  imports: importedModules,
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
