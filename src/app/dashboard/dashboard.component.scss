@@ -91,3 +91,68 @@
 .workspace div {
   color: rgba(40,28,89,0.85);
 }
+
+/* Responsive layout */
+@media (max-width: 640px) {
+  :host { height: auto; }
+  .dashboard {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    overflow-x: auto;
+    padding: 0.25rem 0;
+    align-items: center;
+  }
+
+  .sidebar ul li { display: inline-block; }
+
+  .sidebar a { flex-shrink: 0; }
+
+  .sidebar a {
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+
+  .workspace {
+    padding: 1rem;
+    min-height: auto;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    padding: 0.75rem;
+  }
+
+  .sidebar a {
+    padding: 0.55rem 0.5rem;
+  }
+
+  .workspace {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 260px;
+  }
+
+  .workspace {
+    padding: 1.5rem;
+  }
+}
