@@ -1,3 +1,47 @@
 <p>{{title()}}</p>
+<div class="signals-container">
+    <div class="signals-col">
+        <hr />
+        <span class="signals-accent">Regular values:</span>
+        <p>{{"x => " }}{{x}}</p>
+        <p>{{"y => " }}{{y}}</p>
+        <p>{{"z => " }}{{z}}</p>
+        <hr />
+        <p>{{"After ng init()"}}</p>
+        <p>{{"x => " }}{{x}}</p>
+        <hr />
+        <p>{{"After ng init()"}}</p>
+        <p>{{"z => " }}{{z}}</p>
+        <mark class="note">why z is not updating?</mark>
+    </div>
 
-<button (click)="title.set('Modern signals')">Update Title</button>
+    <div class="signals-col">
+        <hr />
+        <span class="signals-accent">Signal values:</span>
+        <p>{{"x1 => " }}{{x1()}}</p>
+        <p>{{"y1 => " }}{{y1()}}</p>
+        <p>{{"z1 => " }}{{z1()}}</p>
+        <hr />
+        <p>{{"After ng init()"}}</p>
+        <p>{{"x1 => " }}{{x1()}}</p>
+        <hr />
+        <p>{{"After ng init()"}}</p>
+        <p>{{"z1 => " }}{{z1()}}</p>
+    </div>
+</div>
+
+<h1>Shopping Cart</h1>
+<select class="dropdown-bottom" [ngModel]="quantity()" (change)="onQuantitySelected($any($event.target).value)">
+    <option disabled value="">--Select a quantity--</option>
+    @for (q of qtyAvailable(); track q) {
+    <option [value]="q">{{ q }}</option>
+    }
+</select>
+<div>Vehicle: {{ selectedVehicle().name}}</div>
+<div>Price: {{ selectedVehicle().price | number: '1.2-2'}}</div>
+<div style="font-weight: bold" [style.color]="color()">Total: {{ exPrice() | number: '1.2-2' }}</div>
+@for (v of vehicles(); track v) {
+<div>
+    {{ v.name }}
+</div>
+}
