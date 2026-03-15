@@ -16,7 +16,13 @@ export class Signals {
   x1 = signal(10);
   y1 = signal(20);
   z1 = computed(() => this.x1() + this.y1());
-
+  firstName = signal('Sushant');
+  lastName = signal('Kunkekar');
+  uppperCaseName = linkedSignal({
+    source: this.firstName,
+    computation:(newValue) => 
+      newValue.toUpperCase()
+  });
   vehiclesLinked = signal([
     { name: 'Car', price: 10000 },
     { name: 'Bike', price: 5000 },
@@ -59,8 +65,8 @@ export class Signals {
     this.x = 100;
     this.x1.set(100);
     setTimeout(() => { 
+      this.lastName.set('Sush');
       
-      this.selectedVehicleLinked.update((v) => ({ ...v, name: "motor" }));
     }, 5000);
   }
 }
