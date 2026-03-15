@@ -1,14 +1,15 @@
-import { Component, computed, effect, linkedSignal, Signal, signal } from '@angular/core';
+import { Component, computed, effect, linkedSignal, signal, OnInit } from '@angular/core';
 import { Vehicle } from './vehicle';
 import { FormsModule } from '@angular/forms';
-import { DecimalPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 @Component({
+  standalone: true,
   selector: 'app-signals',
-  imports: [FormsModule, DecimalPipe],
+  imports: [CommonModule, FormsModule],
   templateUrl: './signals.html',
   styleUrls: ['./signals.scss'],
 })
-export class Signals {
+export class Signals implements OnInit {
   title = signal('Signals in Angular');
   x = 10;
   y = 20;
@@ -60,6 +61,18 @@ export class Signals {
 
   onQuantitySelected(qty: number) {
     this.quantity.set(qty);
+  }
+  
+  // Tailwind dropdown state
+  showQtyDropdown = signal(false);
+
+  toggleQtyDropdown() {
+    this.showQtyDropdown.update(v => !v);
+  }
+
+  selectQty(qty: number) {
+    this.quantity.set(qty);
+    this.showQtyDropdown.set(false);
   }
   ngOnInit() {
     this.x = 100;
