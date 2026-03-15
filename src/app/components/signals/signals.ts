@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, linkedSignal, Signal, signal } from '@angular/core';
 import { Vehicle } from './vehicle';
 import { FormsModule } from '@angular/forms';
 import { DecimalPipe } from '@angular/common';
@@ -16,6 +16,15 @@ export class Signals {
   x1 = signal(10);
   y1 = signal(20);
   z1 = computed(() => this.x1() + this.y1());
+
+  vehiclesLinked = signal([
+    { name: 'Car', price: 10000 },
+    { name: 'Bike', price: 5000 },
+  ]);
+  selectedVehicleLinked = signal(this.vehiclesLinked()[0]);
+
+  price = linkedSignal(() => this.selectedVehicleLinked().price);
+
   quantity = signal<number>(1);
   qtyAvailable = signal([1, 2, 3, 4, 5, 6]);
   selectedVehicle = signal<Vehicle>({ id: 1, name: 'AT-AT', price: 10000 });
@@ -49,5 +58,9 @@ export class Signals {
   ngOnInit() {
     this.x = 100;
     this.x1.set(100);
+    setTimeout(() => { 
+      
+      this.selectedVehicleLinked.update((v) => ({ ...v, name: "motor" }));
+    }, 5000);
   }
 }
