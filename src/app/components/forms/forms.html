@@ -1,1 +1,24 @@
-<p>forms works!</p>
+Form group demo
+<form [formGroup]="formGroupDemo">
+    email:<input type="email" formControlName="email" /> <br />
+    password: <input type="password" formControlName="password" />
+    <button type="submit" [disabled]="formGroupDemo.invalid">Submit</button>
+    <hr />
+    <div>
+        <p> {{formGroupDemo.value | json}} </p>
+    </div>
+</form>
+
+Form Builder demo
+<form [formGroup]="formBuilderDemo">
+    email:<input type="email" formControlName="email" /> <br />
+    password: <input type="password" formControlName="password" />
+    <hr />
+    <div class="form-actions">
+        <button type="submit" [disabled]="formBuilderDemo.invalid">Submit</button>
+        <button type="button" class="btn-reset" (click)="formBuilderDemo.reset()">Reset</button>
+    </div>
+    <div>
+        <p> {{formBuilderDemo.value | json}} </p>
+    </div>
+</form>

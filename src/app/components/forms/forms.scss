@@ -1,0 +1,96 @@
+form {
+	border: 2px solid #4A90E2;
+	padding: 1rem;
+	border-radius: 8px;
+	max-width: 420px;
+	background: #ffffffcc;
+}
+
+input[type="email"],
+input[type="password"] {
+	display: block;
+	width: 100%;
+	padding: 0.5rem 0.6rem;
+	margin: 0.4rem 0 0.8rem 0;
+	border: 1px solid #cbd5e1;
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+
+.nav-footer {
+	margin-top: 1rem;
+}
+
+/* Submit button styles */
+form button[type="submit"] {
+	background: #4A90E2;
+	color: #fff;
+	border: none;
+	padding: 0.6rem 1rem;
+	border-radius: 6px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 120ms ease, transform 120ms ease;
+    margin-bottom: 0.5rem;
+}
+
+form button[type="submit"]:hover:not(:disabled) {
+	background: #357ABD;
+	transform: translateY(-1px);
+}
+
+form button[type="submit"]:focus {
+	outline: 3px solid rgba(74,144,226,0.25);
+	outline-offset: 2px;
+}
+
+form button[type="submit"]:disabled,
+form button[disabled] {
+	background: #cbd5e1;
+	cursor: not-allowed;
+	opacity: 0.9;
+	transform: none;
+}
+
+/* Reset button styles and layout */
+.form-actions {
+	display: flex;
+	gap: 0.6rem;
+	margin-top: 0.8rem;
+}
+
+.form-actions button {
+	flex: 0 0 120px; /* reduced fixed width */
+	background: #4A90E2;
+	color: #fff;
+	border: none;
+	padding: 0 0.8rem; /* horizontal padding only; use fixed height */
+	height: 40px; /* enforce equal height */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border-radius: 6px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.form-actions button:hover:not(:disabled) {
+	background: #357ABD;
+	transform: translateY(-1px);
+}
+
+.form-actions button:focus {
+	outline: 3px solid rgba(74,144,226,0.25);
+	outline-offset: 2px;
+}
+
+.form-actions button:disabled {
+	background: #cbd5e1;
+	color: #64748b;
+	cursor: not-allowed;
+	opacity: 0.9;
+	transform: none;
+}
+

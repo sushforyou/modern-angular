@@ -8,7 +8,7 @@ const importedModules = [CommonModule, RouterLink, RouterLinkActive, RouterOutle
   selector: 'app-root',
   imports: importedModules,
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
   protected readonly title = signal('modern-angular');
