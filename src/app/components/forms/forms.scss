@@ -2,7 +2,7 @@ form {
 	border: 2px solid #4A90E2;
 	padding: 1rem;
 	border-radius: 8px;
-	max-width: 420px;
+	width: 100%;
 	background: #ffffffcc;
 }
 
@@ -92,5 +92,33 @@ form button[disabled] {
 	cursor: not-allowed;
 	opacity: 0.9;
 	transform: none;
+}
+
+/* Two-column layout for form + code */
+.two-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	align-items: start;
+	margin-bottom: 1.2rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.two-col .code-right pre {
+	background: #0f172a;
+	color: #e6eef8;
+	padding: 0.75rem;
+	border-radius: 6px;
+	overflow: auto;
+	white-space: pre;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', 'Courier New', monospace;
+	font-size: 13px;
+	line-height: 1.4;
+	max-height: 240px;
+}
+
+.two-col .code-right code {
+	white-space: pre-wrap;
 }
 

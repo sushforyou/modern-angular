@@ -1,0 +1,22 @@
+.nameInput {
+    display: block;
+    width: 20%;
+    padding: 0.5rem 0.6rem;
+    margin: 0.4rem 0 0.8rem 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top:1rem
+}
+
+.btnClick {
+    background: #4A90E2;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 120ms ease, transform 120ms ease;
+    margin-bottom: 0.5rem;
+}
