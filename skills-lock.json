@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "skills": {
+    "PR Review": {
+      "source": "angular/angular",
+      "sourceType": "github",
+      "computedHash": "f827e291a6b78b82b9916f9742df97c45b922d87460e42c543f41bae9aba8825"
+    },
+    "adev-writing-guide": {
+      "source": "angular/angular",
+      "sourceType": "github",
+      "computedHash": "49cf3f3425ba56c8f3a6e3d224907558df06dc83076114f535f88a679053bfc6"
+    },
+    "reference-compiler-cli": {
+      "source": "angular/angular",
+      "sourceType": "github",
+      "computedHash": "b3d9ba0bcb463f2c5ac134d6ca91105025470889d2cc0895b91cd8828ff63b6f"
+    },
+    "reference-core": {
+      "source": "angular/angular",
+      "sourceType": "github",
+      "computedHash": "98428f08f8ddbcf03a07bf33b00ee5e1bf98f82aabc047595438dd36de061729"
+    },
+    "reference-signal-forms": {
+      "source": "angular/angular",
+      "sourceType": "github",
+      "computedHash": "ceb0ae2c1830bd04b4d6ef5a1fa3ee708ad3bf1052e93a9a3e69c36245a4e9b5"
+    }
+  }
+}
